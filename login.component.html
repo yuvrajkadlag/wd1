@@ -1,0 +1,28 @@
+
+<div class="container" *ngIf="!registered">
+    <h2>Register</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+   <!-- Display registered user's information -->
+<div class=" info" *ngIf="registered">
+    <h3>User Information:</h3>
+    <p>Username: {{ username }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Password: {{ password }}</p>
+  </div>
+  
